@@ -1,35 +1,11 @@
 <?php
+require_once './vendor/autoload.php';
+use Twilio\Twiml;
 
+$response = new Twiml();
+$intro = $response->say('Welcome to the weather service.');
+$gather = $response->gather(['action' => 'keypress-weather.php','input' => 'dtmf', 'timeout' => 20, 'numDigits' => 5]);
+$gather->say('Enter a zip code and press pound. ');
+$response->redirect('menu-main.php', ['method' => 'POST']);
 
-	$url = 'http://api.openweathermap.org/data/2.5/weather?zip=10580,us&appid=0c4a78aea41f8fdb7565a5ebf3b3fa05&units=imperial';
-	$data = file_get_contents($url);
-	$json = json_decode($data, true);
-	
-	$condition = $json['weather'][0]['main'];
-	$temp = round($json['main']['temp']);
-	$city = $json['name'];
-
-	require_once './vendor/autoload.php';
-	use Twilio\Twiml;
-
-
-	$speech = "In " . $city . ", the weather is " . $condition . ", and the temperature is " . $temp . " degrees.";
-//	echo $condition;
-//	echo $city;
-//	echo $speech;
-
-	$response = new Twiml();
-	$intro = $response->say($speech);
-	$pause = $response->pause(['length' => 2]);
-	$response->redirect('menu-main.php', ['method' => 'POST']);
-
-	echo $response;
-
-//        echo <<<EOD
-//        <Response>
-//	<Say>$speech</Say>
-//	<Redirect method="POST">https://www.zaxz.pw/twilio/menu-main.php</Redirect>
-//      </Response>
-//
-//EOD;
-?>
+echo $response;
