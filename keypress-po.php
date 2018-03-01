@@ -6,27 +6,30 @@ switch ($_REQUEST['Digits']) {
     case 1:
 	        echo <<<EOD
         <Response>
-		<Redirect method="POST">https://www.zaxz.pw/twilio/menu-gb.php</Redirect>
+		<Gather numDigits="1" action="mainmenu.php" method="POST">
+        		<Play>https://www.zaxz.pw/twilio/audio/po/ddd.mp3</Play>
+		</Gather>
         </Response>
 EOD;
         break;
     case 2:
 	        echo <<<EOD
         <Response>
-	<Redirect method="POST">https://www.zaxz.pw/twilio/menu-weather.php</Redirect>
+        <Play>https://www.zaxz.pw/twilio/audio/po/breath.mp3</Play>
         </Response>
 EOD;
-	break;
+        break;
     case 3:
-                echo <<<EOD
+	        echo <<<EOD
         <Response>
-        <Redirect method="POST">https://www.zaxz.pw/twilio/menu-po.php</Redirect>
+        <Play>https://www.zaxz.pw/twilio/audio/po/magic.mp3</Play>
         </Response>
 EOD;
         break;
 	//If any other key is pressed, return to the main menu script
+	// !!! This won't do anything, because an invalid key won't send the caller here...
 	default:
-	 header("Location: menu-main.php");
+	 header("Location: twilio.php");
         die;
 }
 
