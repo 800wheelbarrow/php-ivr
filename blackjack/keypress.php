@@ -28,7 +28,7 @@ EOD;
 		{
 			echo <<<EOD
 			<Gather action="keypress.php?player=$playerNewTotal&amp;dealer=$dealer" input="dtmf" timeout="10" numDigits="1">
-			<Say>Would you like another card?</Say></Gather>
+			<Say>Press 1 for another card. Press 2 to stay.</Say></Gather>
 EOD;
 		}
 	echo <<<EOD
