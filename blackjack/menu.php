@@ -3,7 +3,7 @@
 require_once '../vendor/autoload.php';
 use Twilio\Twiml;
 
-$dealer = array(rand(1, 10),rand(1, 10),rand(1, 10),rand(1, 10));
+$dealer = array(rand(1, 10),rand(1, 10));
 $player = array(rand(1, 10),rand(1, 10));
 $dealerCard = $dealer[0];
 $playerTotal = array_sum($player);

@@ -5,6 +5,7 @@
 	$playerTotal = array_sum($player);
 	$dealer = $_GET["dealer"];
 	
+	
 switch ($_REQUEST['Digits']) {
     case 1:
 		$playerNextCard = rand(1, 10);
@@ -36,6 +37,15 @@ EOD;
 EOD;
         break;
     case 2:
+		if ($dealer >= 17)
+		{
+			
+		}
+		else
+		{
+			$dealerNewDraw = array($dealer, rand(1,10));
+			$dealer = array_sum($dealerNewDraw);
+		}
 			echo <<<EOD
         <Response>
 EOD;
