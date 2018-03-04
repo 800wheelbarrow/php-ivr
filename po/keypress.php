@@ -6,7 +6,7 @@ switch ($_REQUEST['Digits']) {
     case 1:
 	        echo <<<EOD
         <Response>
-		<Gather numDigits="1" action="menu-main.php" method="POST">
+		<Gather numDigits="1" action="../menu-main.php" method="POST">
         		<Play>https://www.zaxz.pw/twilio/audio/po/ddd.mp3</Play>
 		</Gather>
         </Response>
