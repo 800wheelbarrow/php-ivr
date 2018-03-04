@@ -30,6 +30,6 @@ $gather = $response->gather(['action' => 'keypress.php?player='.$playerTotal.'&d
 $gather->say($playerResponse);
 $gather->say($dealerResponse);
 $gather->say('Press 1 for another card. Press 2 to stay.');
-$response->redirect('keypress.php?player='.$playerTotal.'&dealer='.$dealerTotal.'&Digits=1');
+$response->redirect('keypress.php?player='.$playerTotal.'&dealer='.$dealerTotal.'&Digits=2');
 echo $response;
 ?>
