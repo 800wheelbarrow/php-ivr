@@ -20,14 +20,14 @@ EOD;
 		{
 		echo <<<EOD
      		<Say>You lose. The dealer's total is $dealer.</Say>
-		<Redirect method="POST">blackjack-init.php</Redirect>
+		<Redirect method="POST">menu.php</Redirect>
      
 EOD;
 		}
 		else
 		{
 			echo <<<EOD
-			<Gather action="keypress-blackjack.php?player=$playerNewTotal&amp;dealer=$dealer" input="dtmf" timeout="10" numDigits="1">
+			<Gather action="keypress.php?player=$playerNewTotal&amp;dealer=$dealer" input="dtmf" timeout="10" numDigits="1">
 			<Say>Would you like another card?</Say></Gather>
 EOD;
 		}
@@ -64,7 +64,7 @@ EOD;
 EOD;
 		}
 	echo <<<EOD
-		<Redirect method="POST">blackjack-init.php</Redirect>
+		<Redirect method="POST">menu.php</Redirect>
 	   </Response>
 EOD;
 	break;
@@ -74,7 +74,7 @@ EOD;
 	 echo <<<EOD
 	  <Response>
 		<Say>You pressed an incorrect key.</Say>
-		<Redirect method="POST">blackjack-init.php</Redirect>
+		<Redirect method="POST">menu.php</Redirect>
         </Response>
 EOD;
         die;
