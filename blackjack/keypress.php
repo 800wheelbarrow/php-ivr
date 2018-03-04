@@ -43,8 +43,11 @@ EOD;
 		}
 		else
 		{
+			while ($dealer < 17)
+			{
 			$dealerNewDraw = array($dealer, rand(1,10));
 			$dealer = array_sum($dealerNewDraw);
+			}
 		}
 			echo <<<EOD
         <Response>
