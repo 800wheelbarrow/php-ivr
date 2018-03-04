@@ -73,8 +73,8 @@ EOD;
 	default:
 	 echo <<<EOD
 	  <Response>
-		<Say>You pressed an incorrect key.</Say>
-		<Redirect method="POST">menu.php</Redirect>
+		<Say>Thanks for playing blackjack. Goodbye.</Say>
+		<Redirect method="POST">../menu-main.php</Redirect>
         </Response>
 EOD;
         die;

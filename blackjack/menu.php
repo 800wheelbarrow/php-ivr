@@ -29,7 +29,7 @@ $intro = $response->say('Welcome to blackjack.');
 $gather = $response->gather(['action' => 'keypress.php?player='.$playerTotal.'&dealer='.$dealerTotal,'input' => 'dtmf', 'timeout' => 10, 'numDigits' => 1]);
 $gather->say($playerResponse);
 $gather->say($dealerResponse);
-$gather->say('Press 1 for another card. Press 2 to stay.');
+$gather->say('Press 1 for another card. Press 2 to stay. Press any other key to return to the main menu.');
 $response->redirect('keypress.php?player='.$playerTotal.'&dealer='.$dealerTotal.'&Digits=2');
 echo $response;
 ?>
