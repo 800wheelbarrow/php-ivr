@@ -6,7 +6,7 @@ switch ($_REQUEST['Digits']) {
     case 1:
 	        echo <<<EOD
         <Response>
-		<Gather numDigits="1" action="mainmenu.php" method="POST">
+		<Gather numDigits="1" action="../menu-main.php" method="POST">
         		<Play>https://www.zaxz.pw/twilio/audio/gb/gmtn_l.mp3</Play>
 		</Gather>
         </Response>
@@ -29,7 +29,7 @@ EOD;
 	//If any other key is pressed, return to the main menu script
 	// !!! This won't do anything, because an invalid key won't send the caller here...
 	default:
-	 header("Location: twilio.php");
+	 header("Location: ../menu-main.php");
         die;
 }
 

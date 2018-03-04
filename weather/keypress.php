@@ -9,7 +9,7 @@
 	$temp = round($json['main']['temp']);
 	$city = $json['name'];
 
-	require_once './vendor/autoload.php';
+	require_once '../vendor/autoload.php';
 	use Twilio\Twiml;
 
 
@@ -21,15 +21,8 @@
 	$response = new Twiml();
 	$intro = $response->say($speech);
 	$pause = $response->pause(['length' => 2]);
-	$response->redirect('menu-main.php', ['method' => 'POST']);
+	$response->redirect('../menu-main.php', ['method' => 'POST']);
 
 	echo $response;
 
-//        echo <<<EOD
-//        <Response>
-//	<Say>$speech</Say>
-//	<Redirect method="POST">https://www.zaxz.pw/twilio/menu-main.php</Redirect>
-//      </Response>
-//
-//EOD;
 ?>

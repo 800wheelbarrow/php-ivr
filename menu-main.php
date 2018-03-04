@@ -5,8 +5,8 @@ use Twilio\Twiml;
 $response = new Twiml();
 $intro = $response->say('Welcome to the cafe eighties');
 $pause = $response->pause(['length' => 1]);
-$gather = $response->gather(['action' => 'keypress-main.php','input' => 'dtmf', 'timeout' => 3, 'numDigits' => 1]);
-$gather->say('For George Benson, press 1. For weather, press 2. For The Police, press 3');
-$response->redirect('menu-main.php', ['method' => 'POST']);
+$gather = $response->gather(['action' => 'keypress-main.php','input' => 'dtmf', 'timeout' => 5, 'numDigits' => 1, 'loop' => 0]);
+$gather->say('For weather, press 1. For blackjack, press 2. For George Benson, press 3. For The Police, press 4.');
+// $response->redirect('menu-main.php', ['method' => 'POST']);
 
 echo $response;

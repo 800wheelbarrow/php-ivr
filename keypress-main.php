@@ -6,21 +6,28 @@ switch ($_REQUEST['Digits']) {
     case 1:
 	        echo <<<EOD
         <Response>
-		<Redirect method="POST">https://www.zaxz.pw/twilio/menu-gb.php</Redirect>
-        </Response>
-EOD;
-        break;
-    case 2:
-	        echo <<<EOD
-        <Response>
-	<Redirect method="POST">https://www.zaxz.pw/twilio/menu-weather.php</Redirect>
+		<Redirect method="POST">https://www.zaxz.pw/twilio/weather/menu.php</Redirect>
         </Response>
 EOD;
 	break;
-    case 3:
-                echo <<<EOD
+   case 2:
+	        echo <<<EOD
         <Response>
-        <Redirect method="POST">https://www.zaxz.pw/twilio/menu-po.php</Redirect>
+		<Redirect method="POST">https://www.zaxz.pw/twilio/blackjack/menu.php</Redirect>
+        </Response>
+EOD;
+        break;
+    case 3:
+	        echo <<<EOD
+        <Response>
+		<Redirect method="POST">https://www.zaxz.pw/twilio/gb/menu.php</Redirect>
+	    </Response>
+EOD;
+		break;
+    case 4:
+           echo <<<EOD
+        <Response>
+        <Redirect method="POST">https://www.zaxz.pw/twilio/po/menu.php</Redirect>
         </Response>
 EOD;
         break;
