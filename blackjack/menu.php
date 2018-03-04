@@ -26,7 +26,7 @@ $dealerResponse = "The dealer is showing the ". $dealerCard;
 
 $response = new Twiml();
 $intro = $response->say('Welcome to blackjack.');
-$gather = $response->gather(['action' => 'keypress-blackjack.php?player='.$playerTotal.'&dealer='.$dealerTotal,'input' => 'dtmf', 'timeout' => 10, 'numDigits' => 1]);
+$gather = $response->gather(['action' => 'keypress.php?player='.$playerTotal.'&dealer='.$dealerTotal,'input' => 'dtmf', 'timeout' => 10, 'numDigits' => 1]);
 $gather->say($playerResponse);
 $gather->say($dealerResponse);
 $gather->say('Press 1 for another card. Press 2 to stay.');
