@@ -3,9 +3,6 @@
 require_once '../vendor/autoload.php';
 use Twilio\Twiml;
 
-    // header("content-type: text/xml");
-    // echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
-	
 $response = new Twiml();
 $gather = $response->gather(['action' => '../menu-main.php','input' => 'dtmf', 'numDigits' => 1]);
 
