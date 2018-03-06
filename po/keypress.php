@@ -1,41 +1,33 @@
 <?php
 
-    header("content-type: text/xml");
-    echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
-switch ($_REQUEST['Digits']) {
-    case 1:
-	        echo <<<EOD
-        <Response>
-		<Gather numDigits="1" action="../menu-main.php" method="POST">
-        		<Play>https://www.zaxz.pw/twilio/audio/po/ddd.mp3</Play>
-		</Gather>
-        </Response>
-EOD;
-        break;
-    case 2:
-	        echo <<<EOD
-        <Response>
-		<Gather numDigits="1" action="../menu-main.php">
-        <Play>https://www.zaxz.pw/twilio/audio/po/breath.mp3</Play>
-		</Gather>
-        </Response>
-EOD;
-        break;
-    case 3:
-	        echo <<<EOD
-        <Response>
-		<Gather numDigits="1" action="../menu-main.php">
-        <Play>https://www.zaxz.pw/twilio/audio/po/magic.mp3</Play>
-		</Gather>
-        </Response>
-EOD;
-        break;
+require_once '../vendor/autoload.php';
+use Twilio\Twiml;
 
-		//If any other key is pressed, return to the main menu script
+    // header("content-type: text/xml");
+    // echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+	
+$response = new Twiml();
+$gather = $response->gather(['action' => '../menu-main.php','input' => 'dtmf', 'numDigits' => 1]);
+
+switch ($_REQUEST['Digits']) {
+	case 1:
+		$gather->play('https://www.zaxz.pw/twilio/audio/po/ddd.mp3');
+	break;
+	
+	case 2:
+		$gather->play('https://www.zaxz.pw/twilio/audio/po/breath.mp3');
+	break;
+
+    case 3:
+		$gather->play('https://www.zaxz.pw/twilio/audio/po/magic.mp3');
+	break;
+
+		//If any other key is pressed, return to the main menu
 	default:
-	 header("Location: twilio.php");
+	 header("Location: ../menu-main.php");
         die;
 }
-
+$response->redirect('../menu-main.php', ['method' => 'POST']);
+echo $response;
 
 ?>
