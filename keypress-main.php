@@ -45,6 +45,6 @@ switch ($_REQUEST['Digits']) {
 	 header("Location: menu-main.php");
         die;
 }
-
+echo $response;
 
 ?>
