@@ -1,35 +1,44 @@
 <?php
+require_once '../vendor/autoload.php';
+use Twilio\Twiml;
 
-    header("content-type: text/xml");
-    echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+$response = new Twiml();
+
 switch ($_REQUEST['Digits']) {
     case 1:
-	        echo <<<EOD
-        <Response>
-		<Redirect method="POST">https://www.zaxz.pw/twilio/weather/menu.php</Redirect>
-        </Response>
-EOD;
+	$response->redirect('weather/menu.php', ['method' => 'POST']);
+	        // echo <<<EOD
+        // <Response>
+		// <Redirect method="POST">https://www.zaxz.pw/twilio/weather/menu.php</Redirect>
+        // </Response>
+// EOD;
 	break;
    case 2:
-	        echo <<<EOD
-        <Response>
-		<Redirect method="POST">https://www.zaxz.pw/twilio/blackjack/menu.php</Redirect>
-        </Response>
-EOD;
+	$response->redirect('blackjack/menu.php', ['method' => 'POST']);
+	        // echo <<<EOD
+        // <Response>
+		// <Redirect method="POST">https://www.zaxz.pw/twilio/blackjack/menu.php</Redirect>
+        // </Response>
+// EOD;
         break;
-    case 3:
-	        echo <<<EOD
-        <Response>
-		<Redirect method="POST">https://www.zaxz.pw/twilio/gb/menu.php</Redirect>
-	    </Response>
-EOD;
-		break;
+		   case 3:
+	$response->redirect('news/menu.php', ['method' => 'POST']);
+        break;
     case 4:
-           echo <<<EOD
-        <Response>
-        <Redirect method="POST">https://www.zaxz.pw/twilio/po/menu.php</Redirect>
-        </Response>
-EOD;
+	$response->redirect('gb/menu.php', ['method' => 'POST']);
+	        // echo <<<EOD
+        // <Response>
+		// <Redirect method="POST">https://www.zaxz.pw/twilio/gb/menu.php</Redirect>
+	    // </Response>
+// EOD;
+		break;
+    case 5:
+	$response->redirect('po/menu.php', ['method' => 'POST']);
+           // echo <<<EOD
+        // <Response>
+        // <Redirect method="POST">https://www.zaxz.pw/twilio/po/menu.php</Redirect>
+        // </Response>
+// EOD;
         break;
 	//If any other key is pressed, return to the main menu script
 	default:
