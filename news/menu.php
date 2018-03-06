@@ -1,6 +1,6 @@
 <?php
 
-require_once './vendor/autoload.php';
+require_once '../vendor/autoload.php';
 use Twilio\Twiml;
 
 $url = "https://www.npr.org/rss/podcast.php?id=500005";
