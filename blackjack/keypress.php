@@ -5,6 +5,7 @@
 	$playerTotal = array_sum($player);
 	$dealer = $_GET["dealer"];
 	
+	
 switch ($_REQUEST['Digits']) {
     case 1:
 		$playerNextCard = rand(1, 10);
@@ -18,6 +19,18 @@ EOD;
 		
 		if($playerNewTotal > 21)
 		{
+					if ($dealer >= 17)
+		{
+			
+		}
+		else
+		{
+			while ($dealer < 17)
+			{
+			$dealerNewDraw = array($dealer, rand(1,10));
+			$dealer = array_sum($dealerNewDraw);
+			}
+		}
 		echo <<<EOD
      		<Say>You lose. The dealer's total is $dealer.</Say>
 		<Redirect method="POST">menu.php</Redirect>
@@ -36,6 +49,18 @@ EOD;
 EOD;
         break;
     case 2:
+		if ($dealer >= 17)
+		{
+			
+		}
+		else
+		{
+			while ($dealer < 17)
+			{
+			$dealerNewDraw = array($dealer, rand(1,10));
+			$dealer = array_sum($dealerNewDraw);
+			}
+		}
 			echo <<<EOD
         <Response>
 EOD;
