@@ -18,6 +18,8 @@ if ($player[0] == 1)
 	$player[0] = "ace";
 if ($player[1] == 1)
 	$player[1] = "ace";
+if ($dealerCard == 1)
+	$dealerCard = "ace";
 
 $playerResponse = "You were dealt the " . $player[0] . " of " . $randomSuit1 . " and the " . $player[1] . " of " . $randomSuit2 . " for a total of " . $playerTotal;
 

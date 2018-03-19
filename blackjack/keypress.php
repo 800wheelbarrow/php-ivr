@@ -15,6 +15,9 @@ switch ($_REQUEST['Digits']) {
 		$player[] = $playerNextCard;
 		$playerNewTotal = array_sum($player);
 		
+		if ($playerNextCard == 1)
+	$playerNextCard = "ace";
+		
 		echo <<<EOD
         <Response>
 		<Say>The dealer gave you the $playerNextCard of $randomSuit1 for a total of $playerNewTotal.</Say>
