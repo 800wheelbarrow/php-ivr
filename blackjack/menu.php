@@ -14,6 +14,11 @@ $randomSuit1 = $suits[rand(0,3)];
 $randomSuit2 = $suits[rand(0,3)];
 $dealerSuit = $suits[rand(0,3)];
 
+if ($player[0] == 1)
+	$player[0] = "ace";
+if ($player[1] == 1)
+	$player[1] = "ace";
+
 $playerResponse = "You were dealt the " . $player[0] . " of " . $randomSuit1 . " and the " . $player[1] . " of " . $randomSuit2 . " for a total of " . $playerTotal;
 
 $dealerResponse = "The dealer is showing the ". $dealerCard . " of " . $dealerSuit;
