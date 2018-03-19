@@ -17,7 +17,7 @@ switch ($_REQUEST['Digits']) {
 		
 		echo <<<EOD
         <Response>
-		<Say>The dealer gave you the $playerNextCard of $suits for a total of $playerNewTotal.</Say>
+		<Say>The dealer gave you the $playerNextCard of $randomSuit1 for a total of $playerNewTotal.</Say>
 EOD;
 		
 		if($playerNewTotal > 21)
