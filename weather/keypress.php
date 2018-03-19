@@ -12,7 +12,7 @@
 	require_once '../vendor/autoload.php';
 	use Twilio\Twiml;
 
-	if (!isset($temp)){
+	if ($temp == ""){
 	$speech = "Sorry, I couldn't find the weather for " . $userEntry . ". Please try again. ";
 	
 	$response = new Twiml();
