@@ -9,11 +9,16 @@ $dealerCard = $dealer[0];
 $playerTotal = array_sum($player);
 $dealerTotal = array_sum($dealer);
 
+$suits = array("clubs", "diamonds", "hearts", "spades");
+$randomSuit1 = $suits[rand(0,3)];
+$randomSuit2 = $suits[rand(0,3)];
+$dealerSuit = $suits[rand(0,3)];
+
 // echo "You were dealt the ", $player[0], " and the ", $player[1], " for a total of ", $playerTotal, "<br />";
-$playerResponse = "You were dealt the " . $player[0] . " and the " . $player[1] . " for a total of " . $playerTotal;
+$playerResponse = "You were dealt the " . $player[0] . " of " . $randomSuit1 . " and the " . $player[1] . " of " . $randomSuit2 . " for a total of " . $playerTotal;
 // echo $playerResponse;
 // echo "The dealer is showing the ", $dealerCard, "<br />";
-$dealerResponse = "The dealer is showing the ". $dealerCard;
+$dealerResponse = "The dealer is showing the ". $dealerCard . " of " . $dealerSuit;
 
 // Print contents of array:
 // print_r($dealer);
