@@ -5,6 +5,9 @@
 	$playerTotal = array_sum($player);
 	$dealer = $_GET["dealer"];
 	
+	$suits = array("clubs", "diamonds", "hearts", "spades");
+$randomSuit1 = $suits[rand(0,3)];
+	
 	
 switch ($_REQUEST['Digits']) {
     case 1:
@@ -14,7 +17,7 @@ switch ($_REQUEST['Digits']) {
 		
 		echo <<<EOD
         <Response>
-		<Say>The dealer gave you a $playerNextCard for a total of $playerNewTotal.</Say>
+		<Say>The dealer gave you the $playerNextCard of $suits for a total of $playerNewTotal.</Say>
 EOD;
 		
 		if($playerNewTotal > 21)
@@ -70,6 +73,12 @@ EOD;
      		<Say>Blackjack! You win. The dealer's total is $dealer.</Say>
 EOD;
 		}
+		elseif($playerTotal > 21)
+		{
+			echo <<<EOD
+			<Say>You went over! You lose. Your total is $playerTotal, and the dealer's total is $dealer.</Say>
+EOD;
+		}
 		elseif($dealer > 21)
 		{
 			echo <<<EOD
@@ -80,6 +89,12 @@ EOD;
 		{
 			echo <<<EOD
 			<Say>You win. Your total is $playerTotal, and the dealer's total is $dealer.</Say>
+EOD;
+		}
+		elseif($playerTotal == $dealer)
+		{
+			echo <<<EOD
+			<Say>It's a tie! You push. Your total is $playerTotal, and the dealer's total is $dealer.</Say>
 EOD;
 		}
 		else
