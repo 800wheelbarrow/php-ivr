@@ -9,20 +9,24 @@ $dealerCard = $dealer[0];
 $playerTotal = array_sum($player);
 $dealerTotal = array_sum($dealer);
 
-// echo "You were dealt the ", $player[0], " and the ", $player[1], " for a total of ", $playerTotal, "<br />";
-$playerResponse = "You were dealt the " . $player[0] . " and the " . $player[1] . " for a total of " . $playerTotal;
-// echo $playerResponse;
-// echo "The dealer is showing the ", $dealerCard, "<br />";
-$dealerResponse = "The dealer is showing the ". $dealerCard;
+$suits = array("clubs", "diamonds", "hearts", "spades");
+$randomSuit1 = $suits[rand(0,3)];
+$randomSuit2 = $suits[rand(0,3)];
+$dealerSuit = $suits[rand(0,3)];
+
+if ($player[0] == 1)
+	$player[0] = "ace";
+if ($player[1] == 1)
+	$player[1] = "ace";
+if ($dealerCard == 1)
+	$dealerCard = "ace";
+
+$playerResponse = "You were dealt the " . $player[0] . " of " . $randomSuit1 . " and the " . $player[1] . " of " . $randomSuit2 . " for a total of " . $playerTotal;
+
+$dealerResponse = "The dealer is showing the ". $dealerCard . " of " . $dealerSuit;
 
 // Print contents of array:
 // print_r($dealer);
-// Print one element in array:
-// echo $dealer[1];
-
-// Add another element to the array
-// $player[] = rand(1, 10);
-// print_r($player);
 
 $response = new Twiml();
 $intro = $response->say('Welcome to blackjack.');
